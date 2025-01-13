@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="메인 홈"
+        android:icon="@drawable/ic_home"
+
+        />
+    <item
+        android:id="@+id/quest"
+        android:title="퀘스트"
+        android:icon="@drawable/ic_quest"
+        />
+    <item
+        android:id="@+id/eval"
+        android:title="인사평가"
+        android:icon="@drawable/ic_eval"
+        />
+    <item
+        android:id="@+id/project"
+        android:title="프로젝트"
+        android:icon="@drawable/ic_project"
+        />
+    <item
+        android:id="@+id/board"
+        android:title="게시판"
+        android:icon="@drawable/ic_board"
+        />
+</menu>

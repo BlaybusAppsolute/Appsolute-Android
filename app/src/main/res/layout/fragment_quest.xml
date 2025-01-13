@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".QuestFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="353dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="31dp"
+        android:text="1월 퀘스트"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Box" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Box"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 둥근 모서리 배경 -->
+        <View
+            android:id="@+id/roundedBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_background"
+            android:clipToOutline="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 좌 화살표 버튼 -->
+        <ImageButton
+            android:id="@+id/leftArrowButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="54dp"
+            android:background="@null"
+            android:contentDescription="Left Arrow"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 년월 텍스트 -->
+        <TextView
+            android:id="@+id/currentMonthYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="66dp"
+            android:text="2025.01"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@id/rightArrowButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/leftArrowButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 우 화살표 버튼 -->
+        <ImageButton
+            android:id="@+id/rightArrowButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="54dp"
+            android:background="@null"
+            android:contentDescription="Right Arrow"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 주차 리스트 박스 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/weeksContainer"
+            android:layout_width="353dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currentMonthYear">
+
+            <!-- 내부 ConstraintLayout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 주차 텍스트 -->
+                <TextView
+                    android:id="@+id/week1"
+                    android:layout_width="66dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="1주차"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_default="wrap"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/week2"
+                    android:layout_width="66dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="2주차"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_default="wrap"
+                    app:layout_constraintStart_toEndOf="@id/week1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/week3"
+                    android:layout_width="66dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="3주차"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_default="wrap"
+                    app:layout_constraintStart_toEndOf="@id/week2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/week4"
+                    android:layout_width="66dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="4주차"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_default="wrap"
+                    app:layout_constraintStart_toEndOf="@id/week3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/week5"
+                    android:layout_width="66dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="5주차"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_default="wrap"
+                    app:layout_constraintStart_toEndOf="@id/week4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/selectedWeekBox"
+            android:layout_width="352dp"
+            android:layout_height="67dp"
+            android:background="#FF073066"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:elevation="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@id/weeksContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/selectedWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3주차"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/weekDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01.15 - 01.21"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/selectedWeek"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
