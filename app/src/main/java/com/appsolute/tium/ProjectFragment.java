@@ -47,13 +47,5 @@ public class ProjectFragment extends Fragment {
 
         adapter = new ProjectAdapter(projectItems);
         recyclerView.setAdapter(adapter);
-
-        // Update data dynamically (optional)
-        // Uncomment below to simulate adding more items
-        /*
-        boardItems.add("Third Item");
-        boardItems.add("Fourth Item");
-        adapter.updateData(boardItems);
-        */
     }
 }
