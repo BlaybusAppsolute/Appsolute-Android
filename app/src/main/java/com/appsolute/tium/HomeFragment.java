@@ -1,5 +1,6 @@
 package com.appsolute.tium;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,6 +62,14 @@ public class HomeFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        ImageView imageView2 = view.findViewById(R.id.imageView2);
+
+        // imageView2 클릭 이벤트 설정
+        imageView2.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), EditProfile.class);
+            startActivity(intent);
+        });
 
         // Initialize calendar
         calendar = Calendar.getInstance();

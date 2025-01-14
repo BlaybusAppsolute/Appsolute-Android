@@ -12,7 +12,7 @@ import com.appsolute.tium.R;
 
 import java.util.List;
 
-public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.BoardViewHolder> {
+public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.projectViewHolder> {
 
     private List<String> items;
 
@@ -22,14 +22,14 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.BoardVie
 
     @NonNull
     @Override
-    public BoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public projectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_board, parent, false);
-        return new BoardViewHolder(view);
+                .inflate(R.layout.item_project, parent, false);
+        return new projectViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BoardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull projectViewHolder holder, int position) {
         holder.itemTitle.setText(items.get(position));
     }
 
@@ -43,10 +43,10 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.BoardVie
         notifyDataSetChanged();
     }
 
-    static class BoardViewHolder extends RecyclerView.ViewHolder {
+    static class projectViewHolder extends RecyclerView.ViewHolder {
         TextView itemTitle;
 
-        public BoardViewHolder(@NonNull View itemView) {
+        public projectViewHolder(@NonNull View itemView) {
             super(itemView);
             itemTitle = itemView.findViewById(R.id.itemTitle);
         }

@@ -69,14 +69,16 @@
             android:id="@+id/currentMonthYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="66dp"
             android:text="2025.01"
-            android:textColor="@android:color/black"
+            android:textColor="@color/white"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:onClick="onMonthYearClicked"
+            app:layout_constraintBottom_toBottomOf="@+id/rightArrowButton"
             app:layout_constraintEnd_toStartOf="@id/rightArrowButton"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/leftArrowButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/leftArrowButton" />
 
         <!-- 우 화살표 버튼 -->
         <ImageButton
@@ -194,8 +196,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/selectedWeekBox"
-            android:layout_width="352dp"
-            android:layout_height="67dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:background="#FF073066"
             android:visibility="gone"
             android:layout_marginTop="16dp"

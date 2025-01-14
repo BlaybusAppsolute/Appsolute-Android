@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="353dp"
-    android:layout_height="157dp"
+    android:layout_height="216dp"
     android:layout_margin="16dp"
     android:background="#FFFFFF"
     app:cardCornerRadius="16dp"
@@ -15,44 +16,35 @@
         <!-- Title -->
         <TextView
             android:id="@+id/itemTitle"
-            android:layout_width="209dp"
-            android:layout_height="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="퀘스트"
             android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <!-- TextView2 -->
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:text="TextView1"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@id/itemTitle"
-            app:layout_constraintTop_toBottomOf="@id/itemTitle" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/moreButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="22dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="@id/textView1"
-            app:layout_constraintTop_toBottomOf="@id/textView1">
+            app:layout_constraintStart_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="309dp"
+                android:layout_height="40dp"
                 android:padding="8dp"
                 android:text="더보기"
-                android:textSize="14sp"
-                android:textColor="@android:color/black" />
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 
         <!-- TextView3 -->
@@ -64,6 +56,34 @@
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="@id/textView2"
             app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="21dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_job" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="@+id/itemTitle"
+            app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+            app:srcCompat="@drawable/ic_max" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/imageView6"
+            app:layout_constraintStart_toStartOf="@+id/itemTitle"
+            app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+            app:srcCompat="@drawable/ic_barrier" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
